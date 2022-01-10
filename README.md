@@ -6,7 +6,7 @@
 NEAR Library is a smart contract where you can to create, rate, comment, store and transfer books using the NEAR protocol, making a library online where you can request one book and change the owner. The following are the main functionalities of this smart contract:
 
 1. Add a Book to the library.
-2. Get all the list of Books.
+2. Get the list of all Books.
 3. Get only the books that you added. 
 4. Rate a book.
 5. Add a comment where you describe why do you liked... or not.
@@ -20,13 +20,12 @@ To run this project locally you need to follow the next steps:
 Step 1: Prerequisites
 ------------------------------
 
-1. Make sure you've installed [Node.js] ≥ 12 (we recommend use [nvm])
-2. Make sure you've installed yarn: `npm install -g yarn`
-3. Install dependencies: `yarn install`
-4. Create a test near account [NEAR test account]
-5. Install the NEAR CLI globally: [near-cli] is a command line interface (CLI) for interacting with the NEAR blockchain
+1. Make sure you've installed rust(https://www.rust-lang.org/tools/install)
+2. Make sure you've installed wasm: `rustup target add wasm32-unknown-unknown --toolchain nightly`
+3. Install dependencies/build wasm: `Cargo build +nightly --target wasm32-unknown-unknown --release`
+4. Create a test near account [NEAR test account](https://wallet.testnet.near.org/)
+5. Install the NEAR CLI globally: [near-cli](https://docs.near.org/docs/tools/near-cli) is a command line interface (CLI) for interacting with the NEAR blockchain
 
-    yarn install --global near-cli
 
 Step 2: Configure your NEAR CLI
 -------------------------------
@@ -35,7 +34,7 @@ Configure your near-cli to authorize your test account recently created:
 
     near login
 
-Step 3: Build and make a smart contract development deploy  
+Step 3: Build and make a smart contract development deploy(Need update)
 --------------------------------
 
 Build the NEAR library smart contract code and deploy the local development server: `yarn build:release` (see `package.json` for a full list of `scripts` you can run with `yarn`). This script return to you a provisional smart contract deployed (save it to use later). You can also follow the instructions on the folder *scripts*.
