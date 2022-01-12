@@ -37,7 +37,12 @@ Configure your near-cli to authorize your test account recently created:
 Step 3: Build and make a smart contract development deploy(Need update)
 --------------------------------
 
-Build the NEAR library smart contract code and deploy the local development server: `yarn build:release` (see `package.json` for a full list of `scripts` you can run with `yarn`). This script return to you a provisional smart contract deployed (save it to use later). You can also follow the instructions on the folder *scripts*.
+ - Compile with `cargo +nightly build --target wasm32-unknown-unknown --release`
+ - Create a subaccount to hold this contract: `near create-account contract-name.your-account-name.testnet --masterAccount your-account-name.testnet --initialBalance 100`.
+ - Deploy this contract: `near deploy --accountId contract-name.your-account-name.testnet --wasmFile './target/wasm32-unknown-unknown/release/library.wasm'
+ - Call functions in it then delete the account when it's no longer needed.
+
+You can also follow the instructions on the folder *scripts*.
 
 
 📑 Exploring the NEAR library smart contract methods 
